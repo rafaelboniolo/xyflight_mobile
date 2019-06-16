@@ -17,7 +17,7 @@ export default createAppContainer(
       )
     },
     {
-      initialRouteName: "New"
+      initialRouteName: "Login"
     }
   )
 );

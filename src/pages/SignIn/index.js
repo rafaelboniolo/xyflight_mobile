@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 import {
   Container,
@@ -15,8 +16,20 @@ import {
 } from "./styles";
 
 const SignIn = props => {
+  /** State */
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  /** Redux Dispatch Actions */
+  const dispatch = useDispatch();
+
   handleNavigation = () => {
     props.navigation.navigate("New");
+  };
+
+  handleSignIn = () => {
+    console.log(email, password);
+    dispatch({ type: "session_REQUEST", payload: { email, password } });
   };
 
   return (
@@ -32,6 +45,8 @@ const SignIn = props => {
         <Input
           placeholder="john@doe.com"
           textContentType="username"
+          value={email}
+          onChangeText={text => setEmail(text)}
           keyboardType="email-address"
         />
 
@@ -39,11 +54,13 @@ const SignIn = props => {
         <Input
           placeholder="Sua senha secreta"
           textContentType="password"
+          value={password}
+          onChangeText={text => setPassword(text)}
           secureTextEntry={true}
           last
         />
 
-        <Button>
+        <Button onPress={handleSignIn}>
           <ButtonText>Entrar</ButtonText>
         </Button>
 
