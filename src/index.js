@@ -1,21 +1,7 @@
 import React from "react";
-import styled from "styled-components/native";
 
-const View = styled.SafeAreaView`
-  background: blue;
-  height: 100%;
-`;
+import Routes from "./routes";
 
-const Text = styled.Text`
-  color: white;
-`;
-
-const App = () => {
-  return (
-    <View>
-      <Text>Hello World</Text>
-    </View>
-  );
-};
+const App = () => <Routes />;
 
 export default App;
