@@ -23,7 +23,7 @@ const Details = ({ navigation }) => {
   return (
     <Container>
       <Header>
-        <Title>Informe dados sobre você</Title>
+        <Title>Conte-nos sobre você</Title>
       </Header>
 
       <Form>
