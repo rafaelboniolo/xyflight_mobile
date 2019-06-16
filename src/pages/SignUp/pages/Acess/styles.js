@@ -47,6 +47,7 @@ export const Input = styled.TextInput.attrs(() => ({
   border: 1px solid ${colors.secondarylighter};
   border-radius: 6px;
   margin-bottom: ${props => (props.last ? "40px" : "20px")};
+  color: #fff;
 `;
 
 export const Button = styled.TouchableOpacity`
