@@ -1,0 +1,3 @@
+rootProject.name = 'xyflight_mobile'
+
+include ':app'
