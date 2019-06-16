@@ -36,14 +36,17 @@ export const Label = styled.Text`
 `;
 
 export const Input = styled.TextInput.attrs(() => ({
-  placeholderTextColor: colors.secondarylighter
+  placeholderTextColor: colors.secondarylighter,
+  autoCorrect: false,
+  autoCompleteType: "off",
+  autoCapitalize: "none"
 }))`
   height: 35px;
   padding: 10px;
   width: 200px;
   border: 1px solid ${colors.secondarylighter};
   border-radius: 6px;
-  margin-bottom: 20px;
+  margin-bottom: ${props => (props.last ? "40px" : "20px")};
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -64,7 +67,9 @@ export const ButtonText = styled.Text`
   font-weight: bold;
 `;
 
-export const CreateAccount = styled.Text`
+export const CreateAccount = styled.TouchableOpacity``;
+
+export const Link = styled.Text`
   color: ${colors.secondarylighter};
   font-size: 12px;
 `;

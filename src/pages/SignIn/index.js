@@ -10,10 +10,15 @@ import {
   Title,
   Logo,
   Form,
-  CreateAccount
+  CreateAccount,
+  Link
 } from "./styles";
 
-const SignIn = () => {
+const SignIn = props => {
+  handleNavigation = () => {
+    props.navigation.navigate("New");
+  };
+
   return (
     <Container>
       <Header>
@@ -27,13 +32,15 @@ const SignIn = () => {
         <Input placeholder="john@doe.com" />
 
         <Label>Senha</Label>
-        <Input placeholder="Sua senha secreta" />
+        <Input placeholder="Sua senha secreta" last />
 
         <Button>
           <ButtonText>Entrar</ButtonText>
         </Button>
 
-        <CreateAccount>Não possuo conta</CreateAccount>
+        <CreateAccount onPress={handleNavigation}>
+          <Link>Não possuo conta</Link>
+        </CreateAccount>
       </Form>
     </Container>
   );
