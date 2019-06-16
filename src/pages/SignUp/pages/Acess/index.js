@@ -30,10 +30,19 @@ const Access = ({ navigation }) => {
 
       <Form>
         <Label>E-mail</Label>
-        <Input placeholder="john@doe.com" />
+        <Input
+          placeholder="john@doe.com"
+          textContentType="username"
+          keyboardType="email-address"
+        />
 
         <Label>Senha</Label>
-        <Input placeholder="Sua senha secreta" last />
+        <Input
+          placeholder="Sua senha secreta"
+          last
+          textContentType="password"
+          secureTextEntry={true}
+        />
 
         <Button onPress={handleNextPage}>
           <ButtonText>Próximo</ButtonText>
