@@ -29,10 +29,19 @@ const SignIn = props => {
 
       <Form>
         <Label>E-mail</Label>
-        <Input placeholder="john@doe.com" />
+        <Input
+          placeholder="john@doe.com"
+          textContentType="username"
+          keyboardType="email-address"
+        />
 
         <Label>Senha</Label>
-        <Input placeholder="Sua senha secreta" last />
+        <Input
+          placeholder="Sua senha secreta"
+          textContentType="password"
+          secureTextEntry={true}
+          last
+        />
 
         <Button>
           <ButtonText>Entrar</ButtonText>
