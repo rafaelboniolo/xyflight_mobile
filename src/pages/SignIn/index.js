@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 import {
   Container,
-  Label,
-  Input,
+  InputLib,
   Button,
   ButtonText,
-  Header,
-  Title,
-  Logo,
   Form,
   CreateAccount,
-  Link
+  Link,
+  Header,
+  Title
 } from "./styles";
 
 const SignIn = props => {
@@ -28,36 +27,32 @@ const SignIn = props => {
   };
 
   handleSignIn = () => {
-    console.log(email, password);
     dispatch({ type: "session_REQUEST", payload: { email, password } });
   };
 
   return (
     <Container>
       <Header>
-        <Title>
-          XYFlight <Logo icon="plane" />
-        </Title>
+        <Title>XYFlight</Title>
       </Header>
 
       <Form>
-        <Label>E-mail</Label>
-        <Input
-          placeholder="john@doe.com"
+        <InputLib
+          placeholder="E-mail"
+          leftIcon={<Icon name="envelope" size={24} color="white" />}
           textContentType="username"
           value={email}
           onChangeText={text => setEmail(text)}
           keyboardType="email-address"
         />
 
-        <Label>Senha</Label>
-        <Input
-          placeholder="Sua senha secreta"
-          textContentType="password"
+        <InputLib
+          placeholder="Senha secreta"
+          leftIcon={<Icon name="lock" size={26} color="white" />}
           value={password}
           onChangeText={text => setPassword(text)}
           secureTextEntry={true}
-          last
+          textContentType="password"
         />
 
         <Button onPress={handleSignIn}>

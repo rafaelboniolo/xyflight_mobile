@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 import {
   Container,
-  Label,
-  Input,
+  InputLib,
   Button,
   ButtonText,
   Header,
@@ -14,6 +14,12 @@ import {
 } from "./styles";
 
 const Details = ({ navigation }) => {
+  /** State */
+  const [name, setName] = useState("");
+  const [country, setCountry] = useState("");
+  const [city, setCity] = useState("");
+  const [school, setSchool] = useState("");
+
   handleSignUp = () => {};
 
   handlePreviousPage = () => {
@@ -27,17 +33,36 @@ const Details = ({ navigation }) => {
       </Header>
 
       <Form>
-        <Label>Nome</Label>
-        <Input placeholder="John Doe" />
+        <InputLib
+          placeholder="John Doe"
+          textContentType="name"
+          value={name}
+          leftIcon={<Icon name="id-badge" size={24} color="white" />}
+          onChangeText={text => setName(text)}
+        />
 
-        <Label>País</Label>
-        <Input placeholder="England" />
+        <InputLib
+          placeholder="England"
+          value={country}
+          leftIcon={<Icon name="flag" size={24} color="white" />}
+          textContentType="countryName"
+          onChangeText={text => setCountry(text)}
+        />
 
-        <Label>Cidade</Label>
-        <Input placeholder="Chamusca" />
+        <InputLib
+          placeholder="Chamusca"
+          value={city}
+          leftIcon={<Icon name="building" size={24} color="white" />}
+          textContentType="addressCity"
+          onChangeText={text => setCity(text)}
+        />
 
-        <Label>Instituição de Ensino</Label>
-        <Input placeholder="Harvard School" last />
+        <InputLib
+          placeholder="Harvard School"
+          value={school}
+          leftIcon={<Icon name="university" size={24} color="white" />}
+          onChangeText={text => setSchool(text)}
+        />
 
         <Button onPress={handleSignUp}>
           <ButtonText>Cadastrar</ButtonText>

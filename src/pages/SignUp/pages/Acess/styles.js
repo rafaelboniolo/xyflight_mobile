@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { colors } from "../../../../styles";
+import { Input } from "react-native-elements";
 
 export const Container = styled.SafeAreaView`
   display: flex;
@@ -17,6 +18,8 @@ export const Header = styled.View`
 `;
 
 export const Title = styled.Text`
+  text-align: center;
+
   font-size: 24px;
 
   margin-right: 6px;
@@ -35,20 +38,39 @@ export const Label = styled.Text`
   margin-bottom: 4px;
 `;
 
-export const Input = styled.TextInput.attrs(() => ({
+export const InputLib = styled(Input).attrs({
   placeholderTextColor: colors.secondarylighter,
   autoCorrect: false,
   autoCompleteType: "off",
-  autoCapitalize: "none"
-}))`
-  height: 35px;
-  padding: 10px;
-  width: 200px;
-  border: 1px solid ${colors.secondarylighter};
-  border-radius: 6px;
-  margin-bottom: ${props => (props.last ? "40px" : "20px")};
+  autoCapitalize: "none",
+  inputStyle: {
+    color: "#FFF"
+  },
+  containerStyle: {
+    marginBottom: 30,
+    width: 300
+  },
+  leftIconContainerStyle: {
+    marginRight: 10
+  }
+})`
   color: #fff;
 `;
+
+// export const Input = styled.TextInput.attrs(() => ({
+//   placeholderTextColor: colors.secondarylighter,
+//   autoCorrect: false,
+//   autoCompleteType: "off",
+//   autoCapitalize: "none"
+// }))`
+//   height: 35px;
+//   padding: 10px;
+//   width: 200px;
+//   border: 1px solid ${colors.secondarylighter};
+//   border-radius: 6px;
+//   margin-bottom: ${props => (props.last ? "40px" : "20px")};
+//   color: #fff;
+// `;
 
 export const Button = styled.TouchableOpacity`
   display: flex;
