@@ -3,6 +3,7 @@ import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import SignIn from "./pages/SignIn";
 import Acess from "./pages/SignUp/pages/Acess";
 import Details from "./pages/SignUp/pages/Details";
+import Home from "./pages/Home";
 
 export default createAppContainer(
   createSwitchNavigator(
@@ -14,6 +15,14 @@ export default createAppContainer(
           DetailsPage: Details
         },
         { initialRouteName: "AccessPage" }
+      ),
+      Authenticated: createSwitchNavigator(
+        {
+          Home: Home
+        },
+        {
+          initialRouteName: "Home"
+        }
       )
     },
     {
